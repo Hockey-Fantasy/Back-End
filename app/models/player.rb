@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Player Model
 class Player < ApplicationRecord
   has_many :contracts
   has_many :users, through: :team

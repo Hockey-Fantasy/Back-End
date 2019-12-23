@@ -32,17 +32,13 @@ ActiveRecord::Schema.define(version: 2019_12_20_211912) do
   end
 
   create_table "players", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.integer "age"
     t.string "position"
     t.float "fantasy_points"
     t.integer "goals"
     t.integer "assists"
-    t.float "penalty_minutes"
-    t.integer "shots_on_goal"
-    t.integer "short_handed_goals"
-    t.integer "power_play_points"
+    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
