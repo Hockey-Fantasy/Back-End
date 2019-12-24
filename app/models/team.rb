@@ -7,4 +7,6 @@ class Team < ApplicationRecord
   has_many :contracts
   has_many :players, through: :contracts
   
+  validates :name, presence :true, length: { in: 6..20 }, uniqueness: true
+  validates :location, presence :true, length: { in: 6..20 }
 end
