@@ -21,6 +21,7 @@ team_Horror = User.create(
   first_name: "Chris",
   last_name: "Tanev",
   email: "chrisTanev@gmail.com",
+  username: "chris105",
   password: "password123"
 )
 
@@ -28,6 +29,7 @@ team_alfie = User.create(
   first_name: "Alfie",
   last_name: "Johnson",
   email: "alfieJohnson@gmail.com",
+  username: "alfie104",
   password: "password456"
 )
 
@@ -35,6 +37,7 @@ team_alvin = User.create(
   first_name: "Alvin",
   last_name: "Kamara",
   email: "alvinKamara@gmail.com",
+  username: "alvin103",
   password: "password789"
 )
 
@@ -42,6 +45,7 @@ team_mary = User.create(
   first_name: "Mary",
   last_name: "Keefe",
   email: "maryKeefe@gmail.com",
+  username: "mary102",
   password: "password135"
 )
 
@@ -49,6 +53,7 @@ team_jason = User.create(
   first_name: "Jason",
   last_name: "Spezza",
   email: "jasonSpezza@gmail.com",
+  username: "jason101",
   password: "password246"
 )
 
@@ -66,6 +71,7 @@ champions_league = League.create(
 big_ballers = Team.create(
   name: "Big Ballers",
   location: "Los Angeles",
+  image: "https://www.logolynx.com/images/logolynx/e6/e6155609f6c4f282d6397194244cb8c2.jpeg",
   user: team_Horror,
   league: stanley_cup_playoffs
 )
@@ -73,6 +79,7 @@ big_ballers = Team.create(
 nyc_klapper = Team.create(
   name: "NYC Klappers",
   location: "New York City",
+  image: "http://alfalfastudio.com/wp-content/uploads/2017/03/03_NYC_FC_LOGO_DESIGN.jpg",
   user: team_alvin,
   league: stanley_cup_playoffs
 )
@@ -80,6 +87,7 @@ nyc_klapper = Team.create(
 tokyo_fins = Team.create(
   name: "Tokyo Fins",
   location: "Tokyo",
+  image: "https://cdn.dribbble.com/users/3471002/screenshots/6369044/tokyo_2x.png",
   user: team_alfie,
   league: champions_league
 )
@@ -87,6 +95,7 @@ tokyo_fins = Team.create(
 london_red_devils = Team.create(
   name: "London Red Devils",
   location: "London",
+  image: "https://i.pinimg.com/474x/3b/59/8d/3b598dc2d5e1a7c1ee635ffe62036494.jpg",
   user: team_jason,
   league: champions_league
 )
@@ -94,6 +103,7 @@ london_red_devils = Team.create(
 paris_blues = Team.create(
   name: "Paris Blues",
   location: "Paris",
+  image: "https://nhl.bamcontent.com/images/photos/299922012/1536x864/cut.jpg",
   user: team_mary,
   league: champions_league
 )

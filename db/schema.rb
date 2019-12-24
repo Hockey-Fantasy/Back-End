@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_211912) do
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.string "image"
     t.bigint "user_id", null: false
     t.bigint "league_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_211912) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.string "username"
     t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
