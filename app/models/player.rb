@@ -5,9 +5,8 @@ class Player < ApplicationRecord
   has_many :contracts
   has_many :teams, through: :contracts
   delegate :teams, to: :contracts
-   # validations
-  validates :fantasy_points, presence :true numericality: true
-  validates :goals, presence :true numericality:{only_integer: true}
-  validates :assists, presence :true numericality:{only_integer: true}
+  validates :fantasy_points, presence: true, numericality: true
+  validates :goals, presence: true, numericality: { only_integer: true }
+  validates :assists, presence: true, numericality: { only_integer: true }
   
 end

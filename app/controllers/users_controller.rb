@@ -1,38 +1,49 @@
 class UsersController < ApplicationController
-  before_action :set_users, only: [:show,:edit, :update, :destroy] 
+  before_action :set_users, only: [:show] 
 
   def index 
     @users = User.all
-    render json: @users
-
-  end
-
-  def show 
-    render json: @user
-  end
-
-  def new 
-  end
-
-  def edit 
-  end
-
-  def create 
-    @user = User.create(user_params)
-    if @user.valid?
-      render json: @user
+    if @users
+      render json:{
+        users: @users 
+      } 
     else
-      render json: {erros: @user.errors.full_messages}
+      render json: {
+        status: 500,
+         users: ["no users found"],
+       }
     end
   end
 
-  def update 
-    @user.update(user_params)
+  def show 
+    if @user 
+      render json: {
+         user: @user,
+       }
+    else
+      render json: {
+         status: 500,
+         users: ["user not found"],
+       }
+    end
   end
 
-  def destroy 
-    @user.destroy_all
+  def create 
+    @user = User.new(user_params)
+    if @user.save 
+      login! 
+      render json: {
+         status: created,
+         user: @user,
+       }
+    else
+      render json: {
+         status: 500,
+         users: @user.errors.full_messages
+       }
+    end
   end
+  
 
   private
 
@@ -41,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.permit(:first_name, :last_name, :username, :password)
+    params.permit(:first_name, :last_name, :email, :username, :password)
   end
 
 end

@@ -17,7 +17,7 @@ Player.destroy_all
 
 
 # User
-team_Horror = User.create(
+team_horror = User.create(
   first_name: "Chris",
   last_name: "Tanev",
   email: "chrisTanev@gmail.com",
@@ -72,7 +72,7 @@ big_ballers = Team.create(
   name: "Big Ballers",
   location: "Los Angeles",
   image: "https://www.logolynx.com/images/logolynx/e6/e6155609f6c4f282d6397194244cb8c2.jpeg",
-  user: team_Horror,
+  user: team_horror,
   league: stanley_cup_playoffs
 )
 
@@ -499,56 +499,3 @@ contract_5e = Contract.create(
   player: barrie
 )
 
-
-
-
-# # Team Data ==> pulling out team name and location
-# team_url = 'https://statsapi.web.nhl.com/api/v1/teams'
-# team_data = RestClient.get team_url
-# team_data_json = JSON.parse(team_data)["teams"]
-# # Roster Data ==> pulling out roster first and last names
-# team_roster_url = "https://statsapi.web.nhl.com/api/v1/teams/"
-# # player_data = RestClient.get 'https://statsapi.web.nhl.com/api/v1/people/8477939/stats?stats=statsSingleSeason&season=20192020'
-# # player_data_json = JSON.parse(player_data)
-# # # puts player_data_arr.class
-# # player_data_json["stats"].each do |player_stat|
-# #   byebug
-# #   Player.create(
-# #     first_name: "", 
-# #     last_name: "", 
-# #     age: "", 
-# #     position: "", 
-# #     fantasy_points: "", 
-# #     goals: "", 
-# #     assists: "", 
-# #     penalty_minutes: "", 
-# #     shots_on_goal: "", 
-# #     short_handed_goals: "", 
-# #     power_play_points: ""
-# #   )
-# # end
-# # player_url = 'https://statsapi.web.nhl.com/api/v1/people/8477939/stats?stats=statsSingleSeason&season=20192020'
-# # response = HTTParty.get(player_url)
-# # puts response
-# # # User
-# # saiko124 = User.create(first_name:'Hamidou', last_name:'Diallo', email: 'abc123@gmail.com', password:'abc1234')
-# # # League
-# # sharks_league = League.create(name:'NHL', location: 'San Jose')
-# # # Player
-# # william_nylander = Player.create(
-# #   first_name: 'William',
-# #   last_name: 'Nylander',
-# #   age: 23,
-# #   position: 'Forward',
-# #   fantasy_points: 8.4,
-# #   goals: 35,
-# #   assists: 75,
-# #   penalty_minutes: 16.8,
-# #   shots_on_goal: 195,
-# #   short_handed_goals: 14,
-# #   power_play_points: 32
-# # )
-# # # Team
-# # king_klapper = Team.create(name:'King Klapper FC',location: 'Bronx', league:sharks_league, user:saiko124 )
-# # # Contract
-# # contract1 = Contract.create(team:king_klapper, player:william_nylander)

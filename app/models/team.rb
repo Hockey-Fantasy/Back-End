@@ -6,7 +6,6 @@ class Team < ApplicationRecord
   belongs_to :league
   has_many :contracts
   has_many :players, through: :contracts
-  
-  validates :name, presence :true, length: { in: 6..20 }, uniqueness: true
-  validates :location, presence :true, length: { in: 6..20 }
+  # validates :name, presence: true, length: { in: 4..20 }, uniqueness: true
+  # validates :location, presence: true, length: { in: 4..20 }
 end
