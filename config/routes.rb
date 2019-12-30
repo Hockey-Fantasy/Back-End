@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
-  get "/logged_in", to: "sessions#is_logged_in?"
+  # get "tokens/create"
+  # sessions
+  post "/login", to: "tokens#login"
+  get "/auto_login", to: "tokens#auto_login"
+  get "/user_is_authed", to: "tokens#user_is_authed"
+  resources :token, only: [:create]
+  resources :sessions, only: [:create]
+  resources :users, only: [:index, :show, :create]
   resources :contracts
   resources :teams
-  resources :users, only: [:index, :show, :create]
   resources :leagues
   resources :players
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
