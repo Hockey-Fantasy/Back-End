@@ -3,7 +3,7 @@
 # User Model
 class User < ApplicationRecord
   has_many :teams
-  has_many :leagues, through: :team
+  has_many :leagues, through: :teams
   has_secure_password
   validates :username, presence: true
   validates :username, uniqueness: true
@@ -12,4 +12,3 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 end
- 

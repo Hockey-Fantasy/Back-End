@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   get "/auto_login", to: "tokens#auto_login"
   get "/user_is_authed", to: "tokens#user_is_authed"
   resources :token, only: [:create]
-  resources :sessions, only: [:create]
-  resources :users, only: [:index, :show, :create]
+  resources :users, only: [:index, :show, :create, :update]
   resources :contracts
   resources :teams
   resources :leagues

@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_users, only: [:show]
+  before_action :set_users, only: [:show, :update]
   skip_before_action :require_login, only: [:create]
 
   def index
     @users = User.all
     if @users
-      render json: {
-        users: @users,
-      }
+      render json: @users
     else
       render json: {
         status: 500,
@@ -18,9 +16,7 @@ class UsersController < ApplicationController
 
   def show
     if @user
-      render json: {
-        user: @user,
-      }
+      render json: @user
     else
       render json: {
         status: 500,
@@ -28,6 +24,7 @@ class UsersController < ApplicationController
       }
     end
   end
+  
 
   def create
     @user = User.create(user_params)
@@ -41,6 +38,11 @@ class UsersController < ApplicationController
         users: @user.errors.full_messages,
       }
     end
+  end
+
+  def update
+    @user.update(user_params)
+    render json: @user
   end
 
   private
