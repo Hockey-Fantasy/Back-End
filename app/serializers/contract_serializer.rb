@@ -1,3 +1,3 @@
 class ContractSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :team_id, :player_id
 end

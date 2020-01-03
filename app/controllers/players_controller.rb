@@ -13,7 +13,7 @@ class PlayersController < ApplicationController
   private
 
   def set_players
-    @user = User.find(params[:id])
+    @player = Player.find(params[:id])
   end
 
 end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/user_is_authed", to: "tokens#user_is_authed"
   resources :token, only: [:create]
   resources :users, only: [:index, :show, :create, :update]
-  resources :contracts
+  resources :contracts, only: [:index, :show, :create]
   resources :teams
   resources :leagues
   resources :players

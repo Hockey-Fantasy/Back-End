@@ -1,46 +1,46 @@
 class TeamsController < ApplicationController
-  before_action :set_teams, only: [:show,:edit, :update, :destroy] 
+  before_action :set_teams, only: [:show, :edit, :update, :destroy]
 
-  def index 
+  def index
     @teams = Team.all
     render json: @teams
   end
 
-  def show 
+  def show
     render json: @team
   end
 
-  def new 
+  def new
   end
 
-  def edit 
+  def edit
   end
 
-  def create 
+  def create
     @team = Team.new(team_params)
     if @team.valid?
-      @team.save 
+      @team.save
       render json: @team
-    else 
-      render json: {errors: @team.errors.full_messages}
+    else
+      render json: { errors: @team.errors.full_messages }
     end
   end
 
-  def update 
+  def update
     @team.update(team_params)
   end
 
-  def destroy 
+  def destroy
     @team.destroy
   end
 
-  private 
-  def set_teams 
+  private
+
+  def set_teams
     @team = Team.find(params[:id])
   end
 
-  def team_params 
-    params.permit(:name, :location, :user_id, :league_id)
+  def team_params
+    params.permit(:name, :location, :image, :user_id, :league_id)
   end
-
 end
