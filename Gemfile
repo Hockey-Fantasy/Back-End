@@ -21,7 +21,7 @@ gem 'puma', '~> 4.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'httparty', '~> 0.17.3'
+gem 'httparty', '~> 0.21.0'
 gem  'rest-client', '~> 2.1'
 gem 'rack-cors', '~> 1.1'
 gem 'active_model_serializers', '~> 0.10.10'
